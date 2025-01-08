@@ -343,6 +343,16 @@ variable "terraform_org_name" {
   }
 }
 
+variable "terraform_project_name" {
+  type        = string
+  description = "Project name for Terraform Cloud or Enterprise"
+  default     = "null"
+  validation {
+    condition     = length(var.terraform_project_name) > 0
+    error_message = "Variable var: terraform_project_name cannot be empty."
+  }
+}
+
 variable "terraform_api_endpoint" {
   description = "API Endpoint for Terraform. Must be in the format of https://xxx.xxx."
   type        = string

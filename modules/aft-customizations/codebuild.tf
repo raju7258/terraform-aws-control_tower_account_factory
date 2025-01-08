@@ -28,6 +28,11 @@ resource "aws_codebuild_project" "aft_global_customizations_terraform" {
       value = data.aws_partition.current.partition
       type  = "PLAINTEXT"
     }
+    environment_variable {
+      name  = "TF_PROJECT_NAME"
+      value = ""
+      type  = "PLAINTEXT"
+    }
   }
 
   logs_config {
@@ -99,6 +104,11 @@ resource "aws_codebuild_project" "aft_account_customizations_terraform" {
     environment_variable {
       name  = "AWS_PARTITION"
       value = data.aws_partition.current.partition
+      type  = "PLAINTEXT"
+    }
+    environment_variable {
+      name  = "TF_PROJECT_NAME"
+      value = ""
       type  = "PLAINTEXT"
     }
   }

@@ -13,20 +13,20 @@ import terraform_client as terraform
 
 
 def setup_and_run_workspace(
-    organization_name, workspace_name, assume_role_arn, role_session_name, api_token
+    organization_name, workspace_name, assume_role_arn, role_session_name, api_token, project_name
 ):
     workspace_id = setup_workspace(
-        organization_name, workspace_name, assume_role_arn, role_session_name, api_token
+        organization_name, workspace_name, assume_role_arn, role_session_name, api_token, project_name
     )
     run_id = stage_run(workspace_id, assume_role_arn, role_session_name, api_token)
     return run_id
 
 
 def setup_workspace(
-    organization_name, workspace_name, assume_role_arn, role_session_name, api_token
+    organization_name, workspace_name, assume_role_arn, role_session_name, api_token, project_name
 ):
     workspace_id = terraform.create_workspace(
-        organization_name, workspace_name, api_token
+        organization_name, workspace_name, api_token, project_name
     )
     print(
         "Successfully created workspace {} with ID {}".format(
@@ -251,6 +251,9 @@ if __name__ == "__main__":
         type=str,
         help="IAM Role ARN to be used by the workspace",
     )
+    # Fetch the project_name from CodeBuild spec (New Line Added)
+    parser.add_argument("--project_name", type=str, help="Name of the TFE project name")
+
     parser.add_argument("--api_endpoint", type=str, help="Terraform API endpoint")
     parser.add_argument("--api_token", type=str, help="Terraform API token")
     parser.add_argument("--terraform_version", type=str, help="Terraform Version")
@@ -278,4 +281,5 @@ if __name__ == "__main__":
             args.assume_role_arn,
             args.assume_role_session_name,
             args.api_token,
+            args.project_name
         )
