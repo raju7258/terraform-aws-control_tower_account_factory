@@ -140,6 +140,7 @@ As of version 1.6.0, AFT collects anonymous operational metrics to help AWS impr
 | <a name="input_terraform_api_endpoint"></a> [terraform\_api\_endpoint](#input\_terraform\_api\_endpoint) | API Endpoint for Terraform. Must be in the format of https://xxx.xxx. | `string` | `"https://app.terraform.io/api/v2/"` | no |
 | <a name="input_terraform_distribution"></a> [terraform\_distribution](#input\_terraform\_distribution) | Terraform distribution being used for AFT - valid values are oss, tfc, or tfe | `string` | `"oss"` | no |
 | <a name="input_terraform_org_name"></a> [terraform\_org\_name](#input\_terraform\_org\_name) | Organization name for Terraform Cloud or Enterprise | `string` | `"null"` | no |
+| <a name="input_terraform_project_name"></a> [terraform\_project\_name](#input\_terraform\_org\_name) | Project name for Terraform Cloud or Enterprise | `string` | `"null"` | no |
 | <a name="input_terraform_token"></a> [terraform\_token](#input\_terraform\_token) | Terraform token for Cloud or Enterprise | `string` | `"null"` | no |
 | <a name="input_terraform_version"></a> [terraform\_version](#input\_terraform\_version) | Terraform version being used for AFT | `string` | `"1.6.0"` | no |
 | <a name="input_tf_backend_secondary_region"></a> [tf\_backend\_secondary\_region](#input\_tf\_backend\_secondary\_region) | AFT creates a backend for state tracking for its own state as well as OSS cases. The backend's primary region is the same as the AFT region, but this defines the secondary region to replicate to. | `string` | `""` | no |
@@ -178,6 +179,7 @@ As of version 1.6.0, AFT collects anonymous operational metrics to help AWS impr
 | <a name="output_terraform_api_endpoint"></a> [terraform\_api\_endpoint](#output\_terraform\_api\_endpoint) | n/a |
 | <a name="output_terraform_distribution"></a> [terraform\_distribution](#output\_terraform\_distribution) | n/a |
 | <a name="output_terraform_org_name"></a> [terraform\_org\_name](#output\_terraform\_org\_name) | n/a |
+| <a name="output_terraform_project_name"></a> [terraform\_project\_name](#output\_terraform\_project\_name) | n/a |
 | <a name="output_terraform_version"></a> [terraform\_version](#output\_terraform\_version) | n/a |
 | <a name="output_tf_backend_secondary_region"></a> [tf\_backend\_secondary\_region](#output\_tf\_backend\_secondary\_region) | n/a |
 | <a name="output_vcs_provider"></a> [vcs\_provider](#output\_vcs\_provider) | n/a |

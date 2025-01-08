@@ -21,4 +21,5 @@ module "aft" {
   terraform_distribution = "tfc"
   terraform_token        = "EXAMPLE-uoc1c1qsw7poexampleewjeno1pte3rw"
   terraform_org_name     = "ExampleOrg"
+  terraform_project_name = "ExampleProject"
 }
